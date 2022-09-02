@@ -10,6 +10,8 @@ void setup()
   lcd.begin(16, 2);
   lcd.print("Thermometor");
   delay(1000);
+  lcd.clear();
+  lcd.print("Degrees F: ");
 }
 
 void loop()
@@ -20,7 +22,6 @@ void loop()
   float temperature = (((voltage - .5) * 100) * 1.8) + 32;
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Degrees F: ");
   lcd.setCursor(0, 1);
   lcd.print(temperature);
   delay(100);
